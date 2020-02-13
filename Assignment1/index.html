@@ -110,7 +110,9 @@ function myFunction() {
   <p id="cities"></p>
 <script>
   var cities = ["New York" , "Los Angeles" , "Chicago"];
-  document.getElementById("cities").innerHTML = cities;
+  for(i=0; i<cities.length; i++){
+    document.getElementById("cities").innerHTML += cities[i];
+  }
   </script>
 
 </body>
