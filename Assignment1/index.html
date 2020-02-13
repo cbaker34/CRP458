@@ -102,7 +102,7 @@
 
 <script>
 function myFunction() {
-  document.getElementById("city").innerHTML += bold("Washington D.C.");
+  document.getElementById("city").innerHTML += "<b>Washington D.C.</b>";
 }
 </script>
   
@@ -114,6 +114,20 @@ function myFunction() {
     document.getElementById("cities").innerHTML += (i+1) + ". " + cities[i] + "<br>";
   }
   </script>
+    
+<h3>Calculate how many minutes old you are(roughly).</h3>
+    
+   <p> Age: <input type="number" id="age">
+        <button type="button" onclick="calculateAge()">Convert Age in Years to Minutes </button>
+    
+    </p>
+    <p id="newAge" ></p>
+ <script>
+    function calculateAge(){
+        var age = Number(document.getElementById("age").value);
+        document.getElementById("newAge").innerHTML = "You are "+ (age*525600) + " minutes old";
+    }
+    </script>
 
 </body>
 </html>
