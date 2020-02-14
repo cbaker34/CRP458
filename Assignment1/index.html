@@ -106,7 +106,7 @@ function myFunction() {
 }
 </script>
   
-  <h2>Top 3 Largest Cities in the United States</h2>
+  <h1>Top 3 Largest Cities in the United States by Population</h1>
   <p id="cities"></p>
 <script>
   var cities = ["New York" , "Los Angeles" , "Chicago"];
@@ -115,7 +115,16 @@ function myFunction() {
   }
   </script>
     
-<h3>Calculate how many minutes old you are(roughly).</h3>
+    <h1>Top 3 Largest Cities in the United States by Area</h1>
+  <p id="cities2"></p>
+<script>
+  var cities2 = ["Juneau" , "Phoenix" , "San Jose"];
+  for(i=0; i<cities.length; i++){
+    document.getElementById("cities2").innerHTML += (i+1) + ". " + cities2[i] + "<br>";
+  }
+  </script>
+    
+<h1>Calculate how many minutes old you are(roughly).</h1>
     
    <p> Age: <input type="number" id="age">
         <button type="button" onclick="calculateAge()">Convert Age in Years to Minutes </button>
@@ -128,6 +137,86 @@ function myFunction() {
         document.getElementById("newAge").innerHTML = "You are "+ (age*525600) + " minutes old";
     }
     </script>
+    
+    <h1>Let me get to know you</h1>
+    
+    <p> Name: <input type="text" id="name"><br>
+        Where are you from?<br>
+       
+        Midwest<input type="radio" id="midwest" value="Midwest"><br>
+         the East<input type="radio" id="east" value="the East"><br>
+         the South<input type="radio" id="south" value="the South"><br>
+         the West<input type="radio" id="west" value="the West"><br>
+        
+        <button type="button" onclick="displayInfo()">Display Info</button>
+        
+    </p>
+    <p id="Info"></p>  
+    <script>
+    function displayInfo(){
+        var info = {name:"", region:""};
+        info.name=document.getElementById("name").value;
+        if(document.getElementById("midwest").checked){
+            info.region="Midwest";
+        }
+        else if (document.getElementById("east").checked){
+            info.region="East";
+            
+        }
+        else if (document.getElementById("south").checked){
+            info.region="South";
+            
+        }
+        else if (document.getElementById("west").checked){
+            info.region="West";
+            
+        }
+        document.getElementById("Info").innerHTML = "You are "+ (info.name) + " and you are from the " + (info.region);
+    }
+    
+    
+    </script>
+    
+     <h1>Let me get to know you Part 2 electric boogaloo</h1>
+    
+    <p> Number of Sibilings: <input type="number" id="siblings"><br>
+        What is your favorite sport?<br>
+       
+        Baseball<input type="radio" id="baseball" ><br>
+         Hockey<input type="radio" id="hockey" ><br>
+         Basketball<input type="radio" id="basketball" ><br>
+         Football<input type="radio" id="football" ><br>
+        
+        <button type="button" onclick="displayInfo2()">Display Info</button>
+        
+    </p>
+    <p id="Info2"></p>  
+    <script>
+    function displayInfo2(){
+        var info2 = {siblings:"", sport:""};
+        info2.siblings=document.getElementById("siblings").value;
+        if(document.getElementById("baseball").checked){
+            info2.sport="Baseball";
+        }
+        else if (document.getElementById("hockey").checked){
+            info2.sport="Hockey";
+            
+        }
+        else if (document.getElementById("basketball").checked){
+            info2.sport="Basketball";
+            
+        }
+        else if (document.getElementById("football").checked){
+            info2.sport="Football";
+            
+        }
+        document.getElementById("Info2").innerHTML = "You have "+ (info2.siblings) + " siblings and your favorite sport is " + (info2.sport);
+    }
+    
+    
+    </script>
+    
+    
 
 </body>
 </html>
