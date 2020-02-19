@@ -67,9 +67,9 @@
 
         //----------Links below the Map----------
 
-        //Pan to Frasier, IA
+        //Pan to Jack Trice Stadium
         function jack() {
-            map.panTo(new L.LatLng(42.013904, -93.635834));
+            map.panTo(new L.LatLng(42.013904, -93.635834), 17);
         }
 
         //set Zoom
@@ -79,11 +79,11 @@
 
 
         //add an event listener for a click event on the button
-        document.getElementById("walmartBtn").addEventListener("click", Walmart);
+        document.getElementById("walmartBtn").addEventListener("click", walmart);
 
-        //Goldfield Iowa function
-        function jack() {
-            map.setView(new L.LatLng(42.013904, -93.635834), 17);
+        //Walmart function
+        function walmart() {
+            map.setView(new L.LatLng(42.015659, -93.607470), 17);
         };    
     </script>
 
