@@ -25,6 +25,12 @@
 
 <body>
     <div id='map'></div>
+    <br>
+    Pan to <a href="jack()">Jack Trice Stadium</a><br>
+    
+    <a href="#" id="zoomOut">Zoom out to level 8</a><br>
+    
+    <button id="walmart">Visit Walmart</button>
 
     <script>
         var map = L.map('map').setView([42.0, -93.634], 13);
@@ -36,9 +42,33 @@
             accessToken: 'pk.eyJ1IjoiY2Jha2VyMzQiLCJhIjoiY2s2c24wanU5MDFqdTNxbzY5dnpyb2V4diJ9.I6pEWkBPXtTqEutreXfmPg' 
         }).addTo(map);
 
-        L.marker([42.00185, -93.63474]).addTo(map)
-            .bindPopup("My Office Location")
+        L.marker([42.034536, -93.639370]).addTo(map)
+            .bindPopup("My Apartment")
             .openPopup();
+        
+        var locations = [
+            [42.021797, -93.649812, "Sips"],
+            [42.021224, -93.634865, "Hilton Coliseum"],
+            [42.025131, -93.653712, "State Gym"]
+        ];
+        
+        for (var i = 0); i < locations.length; i++) {
+            marker = new L.marker([locations[i][0],locations[i][1]])
+            .bindPopup(locations[i][2])
+            .addTo(map);
+        }
+        
+        function jack() {
+            map.panTo(new LatLng(42.013904, -93.635834));
+        }
+        
+        $("#zoomOut").click(function(){
+            map.setZoom(8);
+        });
+        
+        $("#walmart").click(function(){
+            map.setView(new L.LatLng(42.015659, -93.607470), 13);
+        });
     </script>
 
 </body>
