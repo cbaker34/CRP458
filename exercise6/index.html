@@ -19,7 +19,7 @@ Zoom out to see how the green circle gets smaller while the orange circle marker
      width: 500px;
      height: 400px;
 }
-    
+ <script>   
 var map = L.map('map').setView([42.0, -93.634], 12);
 
 L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -61,6 +61,8 @@ var exampleMarker = new L.circleMarker([42.00185, -93.60], {
 	opacity: 1, //opacity of the outline
 	fillOpacity: 0.9    
 }).bindPopup("This is a circle marker").addTo(map);
+     
+    </script>
 
 </body>
 </html>
