@@ -13,7 +13,6 @@
 </head>
 <body>
 <div id='map'></div>
-Zoom out to see how the green circle gets smaller while the orange circle marker stays the same size.
     
     <style>
 #map {
@@ -29,42 +28,35 @@ L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-//this will add one traditional marker
-L.marker([42.00185, -93.63474]).addTo(map)
-   .bindPopup("Professor Seeger's office at the Research Park");
 
-
-
-
-//----------Adding a circle (overlay) that will scale with map----------
-
-//circle must include a radius option expressed in meters. Additional options are the same as those for a path (http://leafletjs.com/reference-1.3.0.html#path) and can be included to chage the circle from the defualt blue.  Comment out to see impact. Note no var was declared for the circle, but I could have done so.
- L.circle([42.00185, -93.66], {
-	radius: 1200,
-	fill: true, //could be false
-	color: 'green', //the outline color
-	fillColor: 'lightgreen',
-	fillOpacity: 0.8  //this represents 80%
- }).bindPopup("This is a circle").addTo(map);
-
-//the use of the periods before .bindup and .addTo(map) is called chaining and allows you to tell the 
-
-
-
-
-
-//----------Adding a circle marker that will scale with map----------
-
-//circle markers must include a radius option expressed in pixels. Additional options are the same as those for a path (http://leafletjs.com/reference-1.3.0.html#path) and can be included to chage the circle from the defualt blue.  Comment out to see impact.
-var exampleMarker = new L.circleMarker([42.00185, -93.60], {
-    radius: 43,  //in pixels
-	fillColor: 'orange',
-	color: "#000",  //this is black color outline
-	weight: 2, //outline weight is thickness of outline
-	opacity: 1, //opacity of the outline
-	fillOpacity: 0.9    
-}).bindPopup("This is a circle marker").addTo(map);
+L.marker([42.034525, -93.639141]).addTo(map)
+   .bindPopup("Collin's Apartment");
      
+     
+var latlngs = [[42.022674, -93.650145], [42.016163, -93.650054]]; 
+var polyline = L.polyline(latlngs, {color: 'brown'}).addTo(map);
+     
+var latlngs = [[42.025158, -93.651884],[42.025173, -93.651120],[42.024724, -93.651113],[42.024734, -93.651888]]; 
+var polygon = L.polygon(latlngs, {color: 'red'}).addTo(map);
+
+
+ L.circle([42.013836, -93.635919], {
+	radius: 200,
+	fill: true, 
+	color: 'green', 
+	fillColor: 'lightgreen',
+	fillOpacity: 0.8  
+ }).bindPopup("Jack Trice Stadium").addTo(map);
+
+var exampleMarker = new L.circleMarker([42.028170, -93.649212], {
+    radius: 15,  
+	fillColor: 'orange',
+	color: "#000",  
+	weight: 2, 
+	opacity: 1, 
+	fillOpacity: 0.9    
+}).bindPopup("Parks Library").addTo(map);   
+       
     </script>
 
 </body>
