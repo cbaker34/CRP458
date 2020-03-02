@@ -138,7 +138,7 @@
             accessToken: 'pk.eyJ1IjoiY2Jha2VyMzQiLCJhIjoiY2s2c24wanU5MDFqdTNxbzY5dnpyb2V4diJ9.I6pEWkBPXtTqEutreXfmPg' 
         }).addTo(map);
         
-        L.geoJSON(states).addTo(map);
+        L.geoJSON(states.geojson).addTo(map);
         L.geoJSON(weatherObservingSystem).addTo(map);
         L.geoJSON(cities).addTo(map);
 
