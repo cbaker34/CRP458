@@ -107,7 +107,7 @@
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script>
 
-    <script src="https://github.com/cbaker34/CRP458/geojson/states.geojson"></script>
+    <script src="https://github.com/cbaker34/CRP458/geojson/states.geojson">states</script>
 
    
     <!--  You can link to your geojson file using the file path (like example above) or using the full URL              
@@ -138,7 +138,7 @@
             accessToken: 'pk.eyJ1IjoiY2Jha2VyMzQiLCJhIjoiY2s2c24wanU5MDFqdTNxbzY5dnpyb2V4diJ9.I6pEWkBPXtTqEutreXfmPg' 
         }).addTo(map);
         
-        L.geoJSON(states.geojson).addTo(map);
+        L.geoJSON(states).addTo(map);
         L.geoJSON(weatherObservingSystem).addTo(map);
         L.geoJSON(cities).addTo(map);
 
