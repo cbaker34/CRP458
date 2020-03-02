@@ -109,15 +109,8 @@
         crossorigin=""></script>
 
     <script src="../geojson/states.geojson"></script>
-    <script src="../geojson/us_cities.geojson"></script>
-    <script src="../geojson/map(1).geojson"></script>
-    
-    
-
-   
-    <!--  You can link to your geojson file using the file path (like example above) or using the full URL              
-    <script src="https://baileyhanson.github.io/CRP558/geojson/USA.geojson"></script>
-    -->
+    <script src="../geojson/cities.geojson"></script>
+    <script src="../geojson/highway.geojson"></script>
     
     <style>
         #map {
@@ -147,9 +140,6 @@
         L.geoJSON(highway).addTo(map);
         L.geoJSON(cities).addTo(map);
 
-        L.marker([42.00185, -93.63474]).addTo(map)
-            .bindPopup("My Office Location")
-            .openPopup();
     </script>
 
 </body>
