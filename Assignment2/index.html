@@ -309,15 +309,15 @@ legend.onAdd = function (map) {
 legend.addTo(map);
 //add an event listener for when the buttons are clicked
     
-    document.getElementById("IowaBtn").addEventListener("click", Iowa);
-    document.getElementById("NewYorkBtn").addEventListener("click", New York);
+   document.getElementById("IowaBtn").addEventListener("click", Iowa);
+   document.getElementById("NewYorkBtn").addEventListener("click", NewYork);
     
     //tell the the map where to go to find the right location when the button is clicked
  function Iowa () {
-            map.setView(new L.LatLng(42.015659, -93.607470), 1000);
+           map.setView(new L.LatLng(42.015659, -93.607470), 10000000);
  };
     function NewYork () {
-            map.setView(new L.LatLng(40.751789, -74.009583), 1000);
+            map.setView(new L.LatLng(40.751789, -74.009583), 1000000);
  };  
 </script>
 
