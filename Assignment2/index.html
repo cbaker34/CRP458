@@ -181,6 +181,11 @@ Sources for this webpage include: the CDC, the New York Times, the U.S. Census B
             accessToken: 'pk.eyJ1IjoiY2Jha2VyMzQiLCJhIjoiY2s2c24wanU5MDFqdTNxbzY5dnpyb2V4diJ9.I6pEWkBPXtTqEutreXfmPg' 
         }).addTo(map);
     
+    var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+	maxZoom: 18,
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+    
    var cities = L.geoJSON(cities).addTo(map);
    var covid = L.geoJSON(covid).addTo(map);
 
@@ -247,6 +252,7 @@ Sources for this webpage include: the CDC, the New York Times, the U.S. Census B
     
     var baseLayers = {
 		"baselayer": baselayer ,
+        "OpenStreetMap_DE": OpenStreetMap_DE ,
 		
 	};
 
