@@ -138,9 +138,12 @@
   </div>
 </div>
 
+<!--Title of the webpage -->
 <h1>How the spread of COVID-19 relates to cities and density</h1>
 	
 	<title>COVID-19 and Density</title>
+    
+    <!-- creating the map -->
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -161,6 +164,11 @@
     
 <p>On this map, you can see the current number of identified cases of COVID-19 within the United States. Also shown on this map is the population density of each state as well as the location of major cities within the United States. As you observe this map, you can see that most cities in the U.S. are congregated along the coasts. This is also seen as coastal states have higher population densities. This is important because this has impacted the spread of COVID-19 within the United States. Coastal cities and states are more dense than the central states and therefore they have seen a much more rapid spread.</p>
 
+<!-- add a button to direct map to illinois and new york -->
+
+<button id="IowaBtn">Check Iowa</button>
+<button id="NewYorkBtn">Check New York</button>
+
 <!-- adding an image to the page -->
 <p><img src="Images/SpreadByState.jpg"></p>
 
@@ -176,7 +184,7 @@ Sources for this webpage include: the CDC, the New York Times, the U.S. Census B
 
 <script type="text/javascript">
     
-    //creating the map and setting a starting location over the U.S.
+    //setting a starting location over the U.S.
 
         var map = L.map('map').setView([37.8, -96], 4);
     
@@ -297,8 +305,20 @@ legend.onAdd = function (map) {
     return div;
 };
 
+    
 legend.addTo(map);
-      
+//add an event listener for when the buttons are clicked
+    
+    document.getElementById("IowaBtn").addEventListener("click", Iowa);
+    document.getElementById("NewYorkBtn").addEventListener("click", New York);
+    
+    //tell the the map where to go to find the right location when the button is clicked
+ function Iowa () {
+            map.setView(new L.LatLng(42.015659, -93.607470), 1000);
+ };
+    function NewYork () {
+            map.setView(new L.LatLng(40.751789, -74.009583), 1000);
+ };  
 </script>
 
 </body>
