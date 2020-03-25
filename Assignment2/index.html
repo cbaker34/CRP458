@@ -153,11 +153,11 @@
 
 <body>
 
-<div id='map'></div>
+<div id='map'></div>    
 
 <script type="text/javascript" src="../geojson/states.js"></script>
 <script src="../geojson/cities.geojson"></script>
-
+<script src="../geojson/covid.geojson"></script>
 
 <script type="text/javascript">
 
@@ -171,6 +171,7 @@
         }).addTo(map);
     
    var cities = L.geoJSON(cities).addTo(map);
+   var covid = L.geoJSON(covid).addTo(map);
 
 	// get color depending on population density value
 	function getColor(d) {
