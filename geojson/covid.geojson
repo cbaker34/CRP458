@@ -1,18 +1,18 @@
 var covid = {
   "currentVersion" : 10.7, 
   "id" : 0, 
-  "name" : "Cases", 
+  "name" : "Definitive Healthcare Bed Locations", 
   "type" : "Feature Layer", 
-  "serviceItemId" : "628578697fb24d8ea4c32fa0c5ae1843", 
+  "serviceItemId" : "1044bb19da8d4dbfb6a96eb1b4ebf629", 
   "isView" : true, 
   "isUpdatableView" : true, 
   "sourceSchemaChangesAllowed" : true, 
-  "displayField" : "Province_State", 
+  "displayField" : "HOSPITAL_NAME", 
   "description" : "", 
   "copyrightText" : "", 
   "defaultVisibility" : true, 
   "editingInfo" : {
-    "lastEditDate" : 1585100679944
+    "lastEditDate" : 1585076964717
   }, 
   "relationships" : [], 
   "isDataVersioned" : false, 
@@ -65,16 +65,16 @@ var covid = {
   "minScale" : 0, 
   "maxScale" : 0, 
   "extent" : {
-    "xmin" : -170.13199999999998, 
-    "ymin" : -14.270999999999958, 
-    "xmax" : 145.67390000000012, 
-    "ymax" : 69.314792160000081, 
+    "xmin" : -170.68577319999997, 
+    "ymin" : -14.29018999999994, 
+    "xmax" : 145.72417040000005, 
+    "ymax" : 71.29890000000006, 
     "spatialReference" : {
       "wkid" : 4326, 
       "latestWkid" : 4326
     }
   }, 
-  "drawingInfo":{"renderer":{"type":"classBreaks","field":"Confirmed","minValue":0,"classBreakInfos":[{"classMaxValue":50,"symbol":{"color":[230,0,0,255],"size":3,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"1 - 50","description":""},{"classMaxValue":200,"symbol":{"color":[230,0,0,255],"size":6.375,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 50 - 200","description":""},{"classMaxValue":400,"symbol":{"color":[230,0,0,255],"size":9.75,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 200 - 400","description":""},{"classMaxValue":800,"symbol":{"color":[230,0,0,255],"size":13.125,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 400 - 800","description":""},{"classMaxValue":1600,"symbol":{"color":[230,0,0,255],"size":16.5,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 800 - 1,600","description":""},{"classMaxValue":3000,"symbol":{"color":[230,0,0,255],"size":19.875,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 1,600 - 3,000","description":""},{"classMaxValue":17000,"symbol":{"color":[230,0,0,255],"size":23.25,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 3,000 - 17,000","description":""},{"classMaxValue":50000,"symbol":{"color":[230,0,0,255],"size":26.625,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 17,000 - 50,000","description":""},{"classMaxValue":100000,"symbol":{"color":[230,0,0,255],"size":30,"angle":0,"xoffset":0,"yoffset":0,"type":"esriSMS","style":"esriSMSCircle"},"label":"\u003e 50,000 - 100,000","description":""}],"classificationMethod":"esriClassifyManual"},"transparency":35}, 
+  "drawingInfo":{"renderer":{"type":"classBreaks","authoringInfo":{"type":"classedSize","classificationMethod":"esriClassifyNaturalBreaks"},"field":"NUM_LICENSED_BEDS","classificationMethod":"esriClassifyNaturalBreaks","defaultSymbol":{"type":"esriSMS","style":"esriSMSCircle","color":[130,130,130,255],"size":4,"angle":0,"xoffset":0,"yoffset":0,"outline":{"color":[0,0,0,255],"width":0.7}},"defaultLabel":"\u003cout of range\u003e","minValue":1,"classBreakInfos":[{"symbol":{"type":"esriSMS","style":"esriSMSCircle","color":[132,0,168,255],"size":4,"angle":0,"xoffset":0,"yoffset":0,"outline":{"color":[223,115,255,255],"width":0.3}},"classMaxValue":107,"label":"≤107"},{"symbol":{"type":"esriSMS","style":"esriSMSCircle","color":[132,0,168,255],"size":6.800000000000001,"angle":0,"xoffset":0,"yoffset":0,"outline":{"color":[223,115,255,255],"width":0.3}},"classMaxValue":258,"label":"≤258"},{"symbol":{"type":"esriSMS","style":"esriSMSCircle","color":[132,0,168,255],"size":9.6,"angle":0,"xoffset":0,"yoffset":0,"outline":{"color":[223,115,255,255],"width":0.3}},"classMaxValue":474,"label":"≤474"},{"symbol":{"type":"esriSMS","style":"esriSMSCircle","color":[132,0,168,255],"size":12.399999999999999,"angle":0,"xoffset":0,"yoffset":0,"outline":{"color":[223,115,255,255],"width":0.3}},"classMaxValue":829,"label":"≤829"},{"symbol":{"type":"esriSMS","style":"esriSMSCircle","color":[132,0,168,255],"size":18,"angle":0,"xoffset":0,"yoffset":0,"outline":{"color":[223,115,255,255],"width":0.3}},"classMaxValue":2753,"label":"≤2753"}],"legendOptions":{"order":"ascendingValues"}},"scaleSymbols":true,"transparency":0,"labelingInfo":null}, 
   "allowGeometryUpdates" : true, 
   "hasAttachments" : false, 
   "viewSourceHasAttachments" : false, 
@@ -101,233 +101,199 @@ var covid = {
       "defaultValue" : null
     }, 
     {
-      "name" : "Province_State", 
+      "name" : "HOSPITAL_NAME", 
       "type" : "esriFieldTypeString", 
-      "alias" : "Province/State", 
+      "alias" : "Hospital Name", 
       "sqlType" : "sqlTypeOther", 
-      "length" : 8000, 
+      "length" : 1000, 
       "nullable" : true, 
       "editable" : true, 
       "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Country Province or State Name (Level 2 Key)\",\"fieldValueType\":\"nameOrTitle\"}"
+      "defaultValue" : null
     }, 
     {
-      "name" : "Country_Region", 
+      "name" : "HOSPITAL_TYPE", 
       "type" : "esriFieldTypeString", 
-      "alias" : "Country/Region", 
+      "alias" : "Hospital Type", 
       "sqlType" : "sqlTypeOther", 
-      "length" : 8000, 
+      "length" : 1000, 
       "nullable" : true, 
       "editable" : true, 
       "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Country or Region Name (Level 1 Key)\",\"fieldValueType\":\"nameOrTitle\"}"
+      "defaultValue" : null
     }, 
     {
-      "name" : "Last_Update", 
-      "type" : "esriFieldTypeDate", 
-      "alias" : "Last Update", 
-      "sqlType" : "sqlTypeOther", 
-      "length" : 8, 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Last data update Date/Time in UTC\",\"fieldValueType\":\"dateAndTime\"}"
-    }, 
-    {
-      "name" : "Lat", 
-      "type" : "esriFieldTypeDouble", 
-      "alias" : "Latitude", 
-      "sqlType" : "sqlTypeOther", 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Geographic Latitude in Decimal Degrees (WGS1984)\",\"fieldValueType\":\"coordinate\"}"
-    }, 
-    {
-      "name" : "Long_", 
-      "type" : "esriFieldTypeDouble", 
-      "alias" : "Longitude", 
-      "sqlType" : "sqlTypeOther", 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Geographic Longitude in Decimal Degrees (WGS1984)\",\"fieldValueType\":\"coordinate\"}"
-    }, 
-    {
-      "name" : "Confirmed", 
-      "type" : "esriFieldTypeInteger", 
-      "alias" : "Confirmed", 
-      "sqlType" : "sqlTypeOther", 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Best collected count of Confirmed Cases reported by geography\",\"fieldValueType\":\"countOrAmount\"}"
-    }, 
-    {
-      "name" : "Recovered", 
-      "type" : "esriFieldTypeInteger", 
-      "alias" : "Recovered", 
-      "sqlType" : "sqlTypeOther", 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Best collected count of Case Recoveries reported by geography\",\"fieldValueType\":\"countOrAmount\"}"
-    }, 
-    {
-      "name" : "Deaths", 
-      "type" : "esriFieldTypeInteger", 
-      "alias" : "Deaths", 
-      "sqlType" : "sqlTypeOther", 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Best collected count for Case Deaths reported by geography\",\"fieldValueType\":\"countOrAmount\"}"
-    }, 
-    {
-      "name" : "Active", 
-      "type" : "esriFieldTypeInteger", 
-      "alias" : "Active", 
-      "sqlType" : "sqlTypeOther", 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Confirmed - Recovered - Deaths (computed)\",\"fieldValueType\":\"countOrAmount\"}"
-    }, 
-    {
-      "name" : "Admin2", 
+      "name" : "HQ_ADDRESS", 
       "type" : "esriFieldTypeString", 
-      "alias" : "County", 
+      "alias" : "Address", 
       "sqlType" : "sqlTypeOther", 
-      "length" : 8000, 
+      "length" : 1000, 
       "nullable" : true, 
       "editable" : true, 
       "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"US County Name (Level 3 Key)\",\"fieldValueType\":\"nameOrTitle\"}"
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "HQ_ADDRESS1", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Address Ln2", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 1000, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "HQ_CITY", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "City", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 1000, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "HQ_STATE", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "State Abrv", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 1000, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "HQ_ZIP_CODE", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "Zip Code", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 20, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "COUNTY_NAME", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "County Name", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 32, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "STATE_NAME", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "State Name", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 35, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "STATE_FIPS", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "State FIPS", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 2, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "CNTY_FIPS", 
+      "type" : "esriFieldTypeString", 
+      "alias" : "County FIPS", 
+      "sqlType" : "sqlTypeOther", 
+      "length" : 3, 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
     }, 
     {
       "name" : "FIPS", 
       "type" : "esriFieldTypeString", 
-      "alias" : "State/County FIPS Code", 
+      "alias" : "FIPS", 
       "sqlType" : "sqlTypeOther", 
       "length" : 5, 
       "nullable" : true, 
       "editable" : true, 
       "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"US State/County Code\",\"fieldValueType\":\"locationOrPlaceName\"}"
+      "defaultValue" : null
     }, 
     {
-      "name" : "Combined_Key", 
-      "type" : "esriFieldTypeString", 
-      "alias" : "Combined Key", 
-      "sqlType" : "sqlTypeOther", 
-      "length" : 8000, 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"Comma separated concatenation of Key Field values (L3, L2, L1)\",\"fieldValueType\":\"locationOrPlaceName\"}"
-    }, 
-    {
-      "name" : "Incident_Rate", 
-      "type" : "esriFieldTypeDouble", 
-      "alias" : "Incident Rate", 
-      "sqlType" : "sqlTypeOther", 
-      "nullable" : true, 
-      "editable" : true, 
-      "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"\",\"fieldValueType\":\"percentageOrRatio\"}"
-    }, 
-    {
-      "name" : "People_Tested", 
+      "name" : "NUM_LICENSED_BEDS", 
       "type" : "esriFieldTypeInteger", 
-      "alias" : "People Tested", 
+      "alias" : "# of Licensed Beds", 
       "sqlType" : "sqlTypeOther", 
       "nullable" : true, 
       "editable" : true, 
       "domain" : null, 
-      "defaultValue" : null, 
-      "description" : "{\"value\":\"\",\"fieldValueType\":\"countOrAmount\"}"
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "NUM_STAFFED_BEDS", 
+      "type" : "esriFieldTypeInteger", 
+      "alias" : "# of Staffed Beds", 
+      "sqlType" : "sqlTypeOther", 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "NUM_ICU_BEDS", 
+      "type" : "esriFieldTypeInteger", 
+      "alias" : "# of ICU Beds", 
+      "sqlType" : "sqlTypeOther", 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "BED_UTILIZATION", 
+      "type" : "esriFieldTypeSingle", 
+      "alias" : "Typical Bed Utilization Rate", 
+      "sqlType" : "sqlTypeOther", 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
+    }, 
+    {
+      "name" : "Potential_Increase_In_Bed_Capac", 
+      "type" : "esriFieldTypeInteger", 
+      "alias" : "Potential Increase in Bed Capacity", 
+      "sqlType" : "sqlTypeOther", 
+      "nullable" : true, 
+      "editable" : true, 
+      "domain" : null, 
+      "defaultValue" : null
     }
   ], 
   "indexes" : [
     {
-      "name" : "PK__NCOV_US___F4B70D855098EB3F", 
+      "name" : "PK__DEFINITI__F4B70D859FF1D179", 
       "fields" : "OBJECTID", 
       "isAscending" : true, 
       "isUnique" : true, 
       "description" : ""
     }, 
     {
-      "name" : "user_2950.NCOV_US_B_CASES_Shape_sidx", 
+      "name" : "user_59461.DEFINITIVE_HEALTHCARE_HOSPITALS_BEDS_HOSPITALS_ONLY_DEFINITIVE_HEALTHCARE_BED_LOCATIONS_Shape_sidx", 
       "fields" : "Shape", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3Last_Update", 
-      "fields" : "Last_Update", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3People_Tested", 
-      "fields" : "People_Tested", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3Incident_Rate", 
-      "fields" : "Incident_Rate", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3FIPS", 
-      "fields" : "FIPS", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3Active", 
-      "fields" : "Active", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3Deaths", 
-      "fields" : "Deaths", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3Recovered", 
-      "fields" : "Recovered", 
-      "isAscending" : true, 
-      "isUnique" : false, 
-      "description" : ""
-    }, 
-    {
-      "name" : "I3Confirmed", 
-      "fields" : "Confirmed", 
       "isAscending" : true, 
       "isUnique" : false, 
       "description" : ""
@@ -336,32 +302,35 @@ var covid = {
   "types" : [], 
   "templates" : [
     {
-      "name" : "Cases", 
+      "name" : "Definitive Healthcare Bed Locations", 
       "description" : "", 
       "drawingTool" : "esriFeatureEditToolPoint", 
       "prototype" : {
         "attributes" : {
-          "Combined_Key" : null, 
-          "Recovered" : null, 
-          "People_Tested" : null, 
-          "Incident_Rate" : null, 
-          "Admin2" : null, 
+          "BED_UTILIZATION" : null, 
+          "Potential_Increase_In_Bed_Capac" : null, 
+          "HOSPITAL_NAME" : null, 
+          "HOSPITAL_TYPE" : null, 
+          "HQ_ADDRESS" : null, 
+          "HQ_ADDRESS1" : null, 
+          "HQ_CITY" : null, 
+          "HQ_STATE" : null, 
+          "HQ_ZIP_CODE" : null, 
+          "COUNTY_NAME" : null, 
+          "STATE_NAME" : null, 
+          "STATE_FIPS" : null, 
+          "CNTY_FIPS" : null, 
           "FIPS" : null, 
-          "Deaths" : null, 
-          "Last_Update" : null, 
-          "Long_" : null, 
-          "Confirmed" : null, 
-          "Active" : null, 
-          "Province_State" : null, 
-          "Lat" : null, 
-          "Country_Region" : null
+          "NUM_LICENSED_BEDS" : null, 
+          "NUM_STAFFED_BEDS" : null, 
+          "NUM_ICU_BEDS" : null
         }
       }
     }
   ], 
   "supportedQueryFormats" : "JSON, geoJSON, PBF", 
-  "hasStaticData" : true, 
-  "maxRecordCount" : 10000, 
+  "hasStaticData" : false, 
+  "maxRecordCount" : 2000, 
   "standardMaxRecordCount" : 32000, 
   "standardMaxRecordCountNoGeometry" : 32000, 
   "tileMaxRecordCount" : 8000, 
