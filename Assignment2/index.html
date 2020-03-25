@@ -155,24 +155,32 @@
 
 <body>
  
+<!-- Text describing the purpose of the webpage -->
 
 <div id='map'></div>  
     
 <p>On this map, you can see the current number of identified cases of COVID-19 within the United States. Also shown on this map is the population density of each state as well as the location of major cities within the United States. As you observe this map, you can see that most cities in the U.S. are congregated along the coasts. This is also seen as coastal states have higher population densities. This is important because this has impacted the spread of COVID-19 within the United States. Coastal cities and states are more dense than the central states and therefore they have seen a much more rapid spread.</p>
 
+<!-- adding an image to the page -->
 <p><img src="Images/SpreadByState.jpg"></p>
+
+<!-- more text describing the image -->
 
 <p>This image, which was featured in the New York Times, demonstrates how the inner states are likely the see the spread of COVID-19 later than the coastal states and cities. While coastal cities and states are already seeing exponential growth in their number of cases, inner states are only just now seeing more frequent cases. This is due to their lower density, which can be seen on the map, and the fact that they do not have as many major metropolitan cities as the coastal states. 
 <br>
 Sources for this webpage include: the CDC, the New York Times, the U.S. Census Bureau</p>
     
-<script type="text/javascript" src="../geojson/states.js"></script>
+<script type="text/javascript" src="../geojson/states.js"></script> 
 <script src="../geojson/cities.geojson"></script>
 <script src="../geojson/covid.geojson"></script>
 
 <script type="text/javascript">
+    
+    //creating the map and setting a starting location over the U.S.
 
         var map = L.map('map').setView([37.8, -96], 4);
+    
+    //adding the main baselayer for the map
 
         var baselayer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -181,6 +189,7 @@ Sources for this webpage include: the CDC, the New York Times, the U.S. Census B
             accessToken: 'pk.eyJ1IjoiY2Jha2VyMzQiLCJhIjoiY2s2c24wanU5MDFqdTNxbzY5dnpyb2V4diJ9.I6pEWkBPXtTqEutreXfmPg' 
         }).addTo(map);
     
+    // adding another basemap to the map
     var OpenStreetMap_DE = L.tileLayer('https://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
 	maxZoom: 18,
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -198,6 +207,8 @@ Sources for this webpage include: the CDC, the New York Times, the U.S. Census B
 				d > 50   ? '#c7e9b4' :
 							'#ffffcc';
 	}
+    
+    //establishing properties of the variables
 
 	function style(feature) {
 		return {
@@ -250,6 +261,7 @@ Sources for this webpage include: the CDC, the New York Times, the U.S. Census B
 
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
     
+    //adding layers to the legend
     var baseLayers = {
 		"baselayer": baselayer ,
         "OpenStreetMap_DE": OpenStreetMap_DE ,
@@ -264,9 +276,13 @@ Sources for this webpage include: the CDC, the New York Times, the U.S. Census B
     
     L.control.layers(baseLayers, overlays).addTo(map);
     
+    //setting location of the legend
+    
     var legend = L.control({position: 'bottomleft'});
 
 legend.onAdd = function (map) {
+    
+    //assigning colors to the values of the legend
 
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 50, 100, 200, 500, 1000],
@@ -282,10 +298,7 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
-    
-   
-
-   
+      
 </script>
 
 </body>
