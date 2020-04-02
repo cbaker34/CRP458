@@ -1,1 +1,192 @@
 
+<style>
+  /* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+        html, body {
+			height: 100%;
+			margin: 0;
+		}
+		
+        #map {
+			width: 700px;
+			height: 500px;
+            z-index: 0;
+		}
+	    
+ /* Properties of the dropdown menu */       
+    
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 19px;
+    height: 19px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 10px/20px Arial, Helvetica, sans-serif;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+    
+  </style>
+
+<html>
+<head>
+
+<div class="navbar">
+  <a href="https://cbaker34.github.io/CRP458/">Home</a>
+  <a href="#news">News</a>
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://cbaker34.github.io/CRP458/exercise1/">Exercise 1</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise2/">Exercise 2</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise3/">Exercise 3</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise4/qgis2web_2020_02_06-19_19_06_368156/">Exercise 4</a>
+      <a href="https://cbaker34.github.io/CRP458/Assignment1/">Assignment 1</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise5/">Exercise 5</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise6/">Exercise 6</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise7/">Exercise 7</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise8/">Exercise 8</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise9/">Exercise 9</a>
+      <a href="https://cbaker34.github.io/CRP458/exercise10/">Exercise 10</a>
+      <a href="https://cbaker34.github.io/CRP458/Assignment2/">Assignment 2</a>
+      <a href="https://cbaker34.github.io/CRP458/Exercise11/">Exercise 11</a>
+    </div>
+  </div>
+</div>
+
+<html>
+<head>
+<meta name="description" content="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Iowa</title>
+	
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> 
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+	
+<script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"
+    integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
+    crossorigin=""></script>
+    
+    <script src="https://unpkg.com/esri-leaflet/dist/esri-leaflet.js"></script>
+
+<!-- Renderers Plugin -->
+<script src="https://unpkg.com/esri-leaflet-renderers@2.0.6/dist/esri-leaflet-renderers.js"
+    integrity="sha512-mhpdD3igvv7A/84hueuHzV0NIKFHmp2IvWnY5tIdtAHkHF36yySdstEVI11JZCmSY4TCvOkgEoW+zcV/rUfo0A=="
+    crossorigin=""></script>
+    
+</head>
+<body>
+<div id='map'></div>
+    
+    <style>
+#map {
+     width: 500px;
+     height: 400px;
+}
+    </style>
+            
+ <script>   
+var map = L.map('map').setView([42.0, -93.634], 6);
+     
+     var ortho_1970 = L.tileLayer.wms("https://ortho.gis.iastate.edu/arcgis/services/ortho/ortho_1970/ImageServer/WMSServer", {
+    layers: 'ortho_1970',
+    format: 'image/png',
+    transparent: true,
+    attribution: "Iowa State University GIS Facility &copy; 2020, Iowa DNR"
+}).addTo(map);
+     
+     
+    L.esri.featureLayer({
+url: 'https://services.arcgis.com/vPD5PVLI6sfkZ5E4/ArcGIS/rest/services/IA_COVID19_Cases/FeatureServer/0'
+}).addTo(map);
+
+    </script>
+
+</body>
+</html>
+
