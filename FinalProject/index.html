@@ -174,6 +174,8 @@
     </script>
   <script src="turbines.geojson" >
     </script>
+    <script src="population.geojson" >
+    </script>
  <script>   
 var map = L.map('map').setView([42.0, -93.634], 6);
      
@@ -197,7 +199,26 @@ function style(feature) {
             outline: 0,
 			fillColor: getColor(feature.properties.GRIDCODE)
 		};
-	}
+	};
+     function getColor2(d) {
+         return d < 5000 ? 'red' :
+				d < 20000 ? 'orange' :
+				d < 50000  ? 'yellow' :
+				d < 100000  ? 'green' :
+				d < 200000   ? 'blue' :
+							'indigo';
+     };
+     
+     function style2(feature) {
+         return {
+             weight: 0,
+             opacity: 0,
+             fillOpacity: 0.7,
+             outline: 5,
+             fillColor: getColor2(feature.properties.DP0010001)
+         }
+     }
+     
     var geojsonMarkerOptions = {
     radius: 4,
     fillColor: "white",
@@ -207,7 +228,7 @@ function style(feature) {
     fillOpacity: 0.8
 };
      var IowaWind = L.geoJson(IowaWind,{style:style}).addTo(map);
- 
+    var population = L.geoJson(population,{style:style2}).addTo(map);
     
 var turbines = L.geoJSON(turbines, {
     pointToLayer: function (feature, latlng) {
@@ -217,7 +238,8 @@ var turbines = L.geoJSON(turbines, {
      
      var overlay = {
          "turbines": turbines,
-         "IowaWind": IowaWind
+         "IowaWind": IowaWind,
+         "population": population,
      };
 
 	var Esri_WorldImagery = {
