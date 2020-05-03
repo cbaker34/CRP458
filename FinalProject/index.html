@@ -184,11 +184,11 @@ var map = L.map('map').setView([42.0, -93.634], 6);
 }).addTo(map);
           
      function getColor(d) {
-		return d < 1 ? 'red' :
-				d < 2 ? 'orange' :
-				d < 3  ? 'yellow' :
-				d < 4  ? 'green' :
-				d < 5   ? 'blue' :
+		return d < 1 ? 'orange' :
+				d < 2 ? 'blue' :
+				d < 3  ? 'red' :
+				d < 4  ? 'yellow' :
+				d < 5   ? 'green' :
 							'indigo';
 	}
 function style(feature) {
@@ -201,20 +201,19 @@ function style(feature) {
 		};
 	};
      function getColor2(d) {
-         return d < 5000 ? 'red' :
-				d < 20000 ? 'orange' :
-				d < 50000  ? 'yellow' :
-				d < 100000  ? 'green' :
-				d < 200000   ? 'blue' :
-							'indigo';
+         return d < 20000 ? 'green' :
+				d < 100000  ? 'yellow' :
+				d < 200000   ? 'red' :
+							'red';
      };
      
      function style2(feature) {
          return {
-             weight: 0,
+             weight: 1,
              opacity: 0,
              fillOpacity: 0.7,
-             outline: 5,
+             outline: 2,
+             //outlineColor: Black,
              fillColor: getColor2(feature.properties.DP0010001)
          }
      }
