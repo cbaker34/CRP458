@@ -172,20 +172,15 @@
     </style>
   <script src="IowaWind.geojson" >
     </script>
+  <script src="turbines.geojson" >
+    </script>
  <script>   
 var map = L.map('map').setView([42.0, -93.634], 6);
      
      var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 }).addTo(map);
-     
-     /*var ortho_1970 = L.tileLayer.wms("https://ortho.gis.iastate.edu/arcgis/services/ortho/ortho_2019/ImageServer/WMSServer", {
-    layers: 'ortho_2019',
-    format: 'image/png',
-    transparent: true,
-    attribution: "Iowa State University GIS Facility &copy; 2020, Iowa DNR"
-}).addTo(map);*/
-     
+          
      function getColor(d) {
 		return d < 1 ? 'red' :
 				d < 2 ? 'orange' :
@@ -205,9 +200,10 @@ function style(feature) {
 	}
 
      var IowaWind = L.geoJson(IowaWind,{style:style}).addTo(map);
-     
+     var turbines = L.geoJson(turbines,{style:style}).addTo(map);
       var IowaWind = {
 		"IowaWind": IowaWind ,
+     
 		
 	};
 
@@ -216,6 +212,8 @@ function style(feature) {
 	};
      
       L.control.layers(Esri_WorldImagery, IowaWind).addTo(map);
+     
+     
      
     </script>
 
