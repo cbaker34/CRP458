@@ -145,6 +145,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Iowa Wind Farms</title>
+    
+    <p style="font-size: 30"><b>Wind Farms in Iowa</b></p>
 	
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> 
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
@@ -164,6 +166,11 @@
 <body>
 <div id='map'></div>
     
+    <button id="IdealLocation">Ideal Location</button>
+<button id="PopularLocation">Popular Location</button>
+    
+    <p>Wind Energy has been one of the fastest growing forms of energy in Iowa for many years, largely due to the implementation of wind farms. Iowa meets many of the ideal criteria for determining where to place wind farms. The most important criteria are high wind speeds and low population density. These ensure that the turbines will have enough wind, while also being far away from most people. On this map, you can see the location of the largest wind farms, the areas with the highest average winds, and population density for each county in Iowa. </p>
+    
     <style>
 #map {
      width: 500px;
@@ -178,6 +185,8 @@
     </script>
  <script>   
 var map = L.map('map').setView([42.0, -93.634], 6);
+     
+     
      
      var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -247,7 +256,38 @@ var turbines = L.geoJSON(turbines, {
      
       L.control.layers(Esri_WorldImagery, overlay).addTo(map);
      
+        var legend = L.control({position: 'bottomleft'});
+
+legend.onAdd = function (map) {
+    
+    //assigning colors to the values of the legend
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 50, 100, 200, 500, 1000],
+        labels = [];
+
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+    
+legend.addTo(map);
      
+        document.getElementById("IdealLocation").addEventListener("click", IdealLocation);
+   document.getElementById("PopularLocation").addEventListener("click", PopularLocation);
+    
+    //tell the the map where to go to find the right location when the button is clicked
+ function IdealLocation () {
+           map.setView(new L.LatLng(43.212306, -94.610139), 10);
+ };
+    function PopularLocation () {
+            map.setView(new L.LatLng(42.780241, -94.771753), 8);
+ };
      
     </script>
 
