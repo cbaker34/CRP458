@@ -174,7 +174,6 @@
     </script>
   <script src="turbines.geojson" >
     </script>
-    <script src="leaflet-heat.js"></script>
  <script>   
 var map = L.map('map').setView([42.0, -93.634], 6);
      
@@ -201,10 +200,7 @@ function style(feature) {
 	}
 
      var IowaWind = L.geoJson(IowaWind,{style:style}).addTo(map);
-     var turbines = L.heatLayer([ 
-         [-118.366, 35.078 ],
-                                
-         ], {radius: 25}).addTo(map);
+     var turbines = L.geoJson(turbines, {radius: 25}).addTo(map);
       
      
      var overlay = {
