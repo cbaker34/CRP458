@@ -170,21 +170,53 @@
      height: 400px;
 }
     </style>
-            
+  <script src="IowaWind.geojson" >
+    </script>
  <script>   
 var map = L.map('map').setView([42.0, -93.634], 6);
      
-     var ortho_1970 = L.tileLayer.wms("https://ortho.gis.iastate.edu/arcgis/services/ortho/ortho_1970/ImageServer/WMSServer", {
-    layers: 'ortho_1970',
+     var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+}).addTo(map);
+     
+     /*var ortho_1970 = L.tileLayer.wms("https://ortho.gis.iastate.edu/arcgis/services/ortho/ortho_2019/ImageServer/WMSServer", {
+    layers: 'ortho_2019',
     format: 'image/png',
     transparent: true,
     attribution: "Iowa State University GIS Facility &copy; 2020, Iowa DNR"
-}).addTo(map);
+}).addTo(map);*/
+     
+     function getColor(d) {
+		return d < 1 ? 'red' :
+				d < 2 ? 'orange' :
+				d < 3  ? 'yellow' :
+				d < 4  ? 'green' :
+				d < 5   ? 'blue' :
+							'indigo';
+	}
+function style(feature) {
+		return {
+			weight: 0,
+			opacity: 1,
+			fillOpacity: 0.7,
+            outline: 0,
+			fillColor: getColor(feature.properties.GRIDCODE)
+		};
+	}
 
-     var IowaWind = L.geoJson(IowaWind, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
+     var IowaWind = L.geoJson(IowaWind,{style:style}).addTo(map);
+     
+      var IowaWind = {
+		"IowaWind": IowaWind ,
+		
+	};
+
+	var Esri_WorldImagery = {
+		"Esri_WorldImagery": Esri_WorldImagery ,
+	};
+     
+      L.control.layers(Esri_WorldImagery, IowaWind).addTo(map);
+     
     </script>
 
 </body>
