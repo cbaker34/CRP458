@@ -1,295 +1,340 @@
 <style>
-  /* Navbar container */
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-  font-family: Arial;
-}
+    /* Navbar container */
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial;
+    }
 
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    /* Links inside the navbar */
+    .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
 
-/* The dropdown container */
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
+    /* The dropdown container */
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
 
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
+    /* Dropdown button */
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        /* Important for vertical align on mobile phones */
+        margin: 0;
+        /* Important for vertical align on mobile phones */
+    }
 
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
-}
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover,
+    .dropdown:hover .dropbtn {
+        background-color: red;
+    }
 
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        float: none;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
 
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
-        html, body {
-			height: 100%;
-			margin: 0;
-		}
-		
-        #map {
-			width: 700px;
-			height: 500px;
-            z-index: 0;
-		}
-	    
- /* Properties of the dropdown menu */       
-    
-.legend {
-    line-height: 18px;
-    color: #555;
-}
-.legend i {
-    width: 19px;
-    height: 19px;
-    float: left;
-    margin-right: 8px;
-    opacity: 0.7;
-}
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+    }
 
-.info {
-    padding: 6px 8px;
-    font: 10px/20px Arial, Helvetica, sans-serif;
-    background: rgba(255,255,255,0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 5px;
+    /* Setting the size of the map */
+    #map {
+        width: 700px;
+        height: 500px;
+        z-index: 0;
+    }
 
-}
-.info h4 {
-    margin: 0 0 5px;
-    color: #777;
-}
-    
-  </style>
+    /* Properties of the dropdown menu */
+
+    .legend {
+        line-height: 18px;
+        color: #555;
+    }
+
+    .legend i {
+        width: 19px;
+        height: 19px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+    }
+
+    .info {
+        padding: 6px 8px;
+        font: 10px/20px Arial, Helvetica, sans-serif;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+
+    }
+
+    .info h4 {
+        margin: 0 0 5px;
+        color: #777;
+    }
+
+
+
+    /* set background color */
+    body {
+        background-color: lightblue;
+    }
+
+</style>
 
 <html>
+
 <head>
 
-<div class="navbar">
-  <a href="https://cbaker34.github.io/CRP458/">Home</a>
-  <a href="#news">News</a>
-  <div class="dropdown">
-    <button class="dropbtn">Dropdown
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="https://cbaker34.github.io/CRP458/exercise1/">Exercise 1</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise2/">Exercise 2</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise3/">Exercise 3</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise4/qgis2web_2020_02_06-19_19_06_368156/">Exercise 4</a>
-      <a href="https://cbaker34.github.io/CRP458/Assignment1/">Assignment 1</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise5/">Exercise 5</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise6/">Exercise 6</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise7/">Exercise 7</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise8/">Exercise 8</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise9/">Exercise 9</a>
-      <a href="https://cbaker34.github.io/CRP458/exercise10/">Exercise 10</a>
-      <a href="https://cbaker34.github.io/CRP458/Assignment2/">Assignment 2</a>
-      <a href="https://cbaker34.github.io/CRP458/Exercise11/">Exercise 11</a>
-      <a href="https://cbaker34.github.io/CRP458/Exercise12/">Exercise 12</a>
-      <a href="https://cbaker34.github.io/CRP458/FinalProject/">Final Project</a>
+    <div class="navbar">
+        <a href="https://cbaker34.github.io/CRP458/">Home</a>
+        <a href="#news">News</a>
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="https://cbaker34.github.io/CRP458/exercise1/">Exercise 1</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise2/">Exercise 2</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise3/">Exercise 3</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise4/qgis2web_2020_02_06-19_19_06_368156/">Exercise 4</a>
+                <a href="https://cbaker34.github.io/CRP458/Assignment1/">Assignment 1</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise5/">Exercise 5</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise6/">Exercise 6</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise7/">Exercise 7</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise8/">Exercise 8</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise9/">Exercise 9</a>
+                <a href="https://cbaker34.github.io/CRP458/exercise10/">Exercise 10</a>
+                <a href="https://cbaker34.github.io/CRP458/Assignment2/">Assignment 2</a>
+                <a href="https://cbaker34.github.io/CRP458/Exercise11/">Exercise 11</a>
+                <a href="https://cbaker34.github.io/CRP458/Exercise12/">Exercise 12</a>
+                <a href="https://cbaker34.github.io/CRP458/FinalProject/">Final Project</a>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<html>
-<head>
-<meta name="description" content="">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Iowa Wind Farms</title>
-    
-    <p style="font-size: 30"><b>Wind Farms in Iowa</b></p>
-	
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" /> 
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-	
-<script src="https://unpkg.com/esri-leaflet@2.3.3/dist/esri-leaflet.js"
-    integrity="sha512-cMQ5e58BDuu1pr9BQ/eGRn6HaR6Olh0ofcHFWe5XesdCITVuSBiBZZbhCijBe5ya238f/zMMRYIMIIg1jxv4sQ=="
-    crossorigin=""></script>
-    
-    <script src="https://unpkg.com/esri-leaflet/dist/esri-leaflet.js"></script>
+    <html>
 
-<!-- Renderers Plugin -->
-<script src="https://unpkg.com/esri-leaflet-renderers@2.0.6/dist/esri-leaflet-renderers.js"
-    integrity="sha512-mhpdD3igvv7A/84hueuHzV0NIKFHmp2IvWnY5tIdtAHkHF36yySdstEVI11JZCmSY4TCvOkgEoW+zcV/rUfo0A=="
-    crossorigin=""></script>
-    
-</head>
+    <head>
+        <meta name="description" content="">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Iowa Wind Farms</title>
+        <img src="windmill.jpg" alt="Windmill" style="position:absolute; TOP:140px; LEFT:600px;width:800px;height:400px;">
+        <p style="font-size: 30"><b>Wind Farms in Iowa</b></p>
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+
+
+
+
+
+
+    </head>
+
 <body>
-<div id='map'></div>
-    
+    <div id='map'></div>
+
+    <!-- create buttons !-->
+
     <button id="IdealLocation">Ideal Location</button>
-<button id="PopularLocation">Popular Location</button>
+    <button id="PopularLocation">Popular Location</button>
     
-    <p>Wind Energy has been one of the fastest growing forms of energy in Iowa for many years, largely due to the implementation of wind farms. Iowa meets many of the ideal criteria for determining where to place wind farms. The most important criteria are high wind speeds and low population density. These ensure that the turbines will have enough wind, while also being far away from most people. On this map, you can see the location of the largest wind farms, the areas with the highest average winds, and population density for each county in Iowa. </p>
+    <!-- page text !-->
+
+    <p>Wind Energy has been one of the fastest growing forms of energy in Iowa for many years, largely due to the implementation of wind farms. Iowa meets many of the ideal criteria for determining where to place wind farms. The most important criteria are high wind speeds and low population density. These ensure that the turbines will have enough wind, while also being far away from most people. On this map, you can see the location of the largest wind farms, the areas with the highest average winds, and population density for each county in Iowa.
+        <br><br>
+        The "Popular Location" button will take you to where the majority of Iowa's major wind farms are located. The "Ideal Location" button will take you to where my analysis shows the best location for a new windfarm would be. </p>
     
+    <!-- size of map !-->
+
     <style>
-#map {
-     width: 500px;
-     height: 400px;
-}
+        #map {
+            width: 500px;
+            height: 400px;
+        }
+
+        /* Adding geojson files /* 
+        
     </style>
-  <script src="IowaWind.geojson" >
+    <script src="IowaWind.geojson">
     </script>
-  <script src="turbines.geojson" >
+    <script src="turbines.geojson">
     </script>
-    <script src="population.geojson" >
+    <script src="population.geojson">
     </script>
- <script>   
-var map = L.map('map').setView([42.0, -93.634], 6);
-     
-     
-     
-     var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-}).addTo(map);
-          
-     function getColor(d) {
-		return d < 1 ? 'orange' :
-				d < 2 ? 'blue' :
-				d < 3  ? 'red' :
-				d < 4  ? 'yellow' :
-				d < 5   ? 'green' :
-							'indigo';
-	}
-function style(feature) {
-		return {
-			weight: 0,
-			opacity: 1,
-			fillOpacity: 0.7,
-            outline: 0,
-			fillColor: getColor(feature.properties.GRIDCODE)
-		};
-	};
-     function getColor2(d) {
-         return d < 20000 ? 'green' :
-				d < 100000  ? 'yellow' :
-				d < 200000   ? 'red' :
-							'red';
-     };
-     
-     function style2(feature) {
-         return {
-             weight: 1,
-             opacity: 0,
-             fillOpacity: 0.7,
-             outline: 2,
-             //outlineColor: Black,
-             fillColor: getColor2(feature.properties.DP0010001)
-         }
-     }
-     
-    var geojsonMarkerOptions = {
-    radius: 4,
-    fillColor: "white",
-    color: "black",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.8
-};
-     var IowaWind = L.geoJson(IowaWind,{style:style}).addTo(map);
-    var population = L.geoJson(population,{style:style2}).addTo(map);
-    
-var turbines = L.geoJSON(turbines, {
-    pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions);
-    }
-}).addTo(map);
-     
-     var overlay = {
-         "turbines": turbines,
-         "IowaWind": IowaWind,
-         "population": population,
-     };
+    <script>
+        
+        //creating map variable and setting setview
 
-	var Esri_WorldImagery = {
-		"Esri_WorldImagery": Esri_WorldImagery ,
-	};
-     
-      L.control.layers(Esri_WorldImagery, overlay).addTo(map);
-     
-        var legend = L.control({position: 'bottomleft'});
+        var map = L.map('map').setView([42.0, -93.634], 6);
 
-legend.onAdd = function (map) {
-    
-    //assigning colors to the values of the legend
+        //adding basemap
 
-    var div = L.DomUtil.create('div', 'info legend'),
-        grades = [0, 50, 100, 200, 500, 1000],
-        labels = [];
+        var Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Source: Esri, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, and UPR-EGP'
+        }).addTo(map);
+        
+        // styles for wind speed and population
+        
+        function getColor(d) {
+            return d < 1 ? 'orange' :
+                d < 2 ? 'blue' :
+                d < 3 ? 'red' :
+                d < 4 ? 'yellow' :
+                d < 5 ? 'green' :
+                'black';
+        }
 
-    for (var i = 0; i < grades.length; i++) {
-        div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
-    }
+        function style(feature) {
+            return {
+                weight: 0,
+                opacity: 1,
+                fillOpacity: 0.7,
+                outline: 0,
+                fillColor: getColor(feature.properties.GRIDCODE)
+            };
+        };
 
-    return div;
-};
+        function getColor2(d) {
+            return d < 20000 ? 'green' :
+                d < 100000 ? 'yellow' :
+                d < 200000 ? 'red' :
+                'red';
+        };
 
-    
-legend.addTo(map);
-     
+        function style2(feature) {
+            return {
+                weight: 1,
+                opacity: 0,
+                fillOpacity: 0.7,
+                outline: 2,
+                fillColor: getColor2(feature.properties.DP0010001)
+            }
+        }
+
+        var geojsonMarkerOptions = {
+            radius: 4,
+            fillColor: "white",
+            color: "black",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        };
+        var IowaWind = L.geoJson(IowaWind, {
+            style: style
+        }).addTo(map);
+        var population = L.geoJson(population, {
+            style: style2
+        }).addTo(map);
+        
+        //changing markers
+        
+        var turbines = L.geoJSON(turbines, {
+            pointToLayer: function(feature, latlng) {
+                return L.circleMarker(latlng, geojsonMarkerOptions);
+            }
+        }).addTo(map);
+        
+        //layer control
+        
+        var overlay = {
+            "turbines": turbines,
+            "IowaWind": IowaWind,
+            "population": population,
+        };
+
+        var Esri_WorldImagery = {
+            "Esri_WorldImagery": Esri_WorldImagery,
+        };
+        //add layer control to map
+        
+        L.control.layers(Esri_WorldImagery, overlay).addTo(map);
+        //add legend and position to map
+        
+        var legend = L.control({
+            position: 'bottomleft'
+        });
+
+        legend.onAdd = function(map) {
+
+            //assigning colors to the values of the legend
+
+            var div = L.DomUtil.create('div', 'info legend'),
+                grades = [4, 3, 2],
+                labels = ['Ideal', 'Sub-Ideal', 'Not Ideal'];
+
+            for (var i = 0; i < grades.length; i++) {
+                div.innerHTML +=
+                    '<i style="background:' + getColor(grades[i]) + '"></i> ' +
+                    labels[i] + '<br>';
+            }
+
+            return div;
+        };
+
+
+        legend.addTo(map);
+        
+        //button click element
+        
         document.getElementById("IdealLocation").addEventListener("click", IdealLocation);
-   document.getElementById("PopularLocation").addEventListener("click", PopularLocation);
-    
-    //tell the the map where to go to find the right location when the button is clicked
- function IdealLocation () {
-           map.setView(new L.LatLng(43.212306, -94.610139), 10);
- };
-    function PopularLocation () {
+        document.getElementById("PopularLocation").addEventListener("click", PopularLocation);
+
+        //tell the the map where to go to find the right location when the button is clicked
+        
+        function IdealLocation() {
+            map.setView(new L.LatLng(43.212306, -94.610139), 10);
+        };
+
+        function PopularLocation() {
             map.setView(new L.LatLng(42.780241, -94.771753), 8);
- };
-     
+        };
+
     </script>
 
 </body>
+
 </html>
