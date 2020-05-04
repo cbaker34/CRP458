@@ -114,11 +114,12 @@
         color: #777;
     }
 
-
-
+    #title {background-color: mediumaquamarine; margin-right: 1200px}
+    #text {background-color: lightblue; margin-right: 0px}
+    
     /* set background color */
     body {
-        background-color: lightblue;
+        background-image:linear-gradient(lightblue, lightgreen)
     }
 
 </style>
@@ -162,16 +163,11 @@
         <meta name="viewport" content="width=device-width">
         <title>Iowa Wind Farms</title>
         <img src="windmill.jpg" alt="Windmill" style="position:absolute; TOP:140px; LEFT:600px;width:800px;height:400px;">
-        <p style="font-size: 30"><b>Wind Farms in Iowa</b></p>
+        <p id="title" style="font-size: 30"><b>Wind Farms in Iowa</b></p>
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
         <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-
-
-
-
-
-
+        
     </head>
 
 <body>
@@ -184,7 +180,7 @@
     
     <!-- page text !-->
 
-    <p>Wind Energy has been one of the fastest growing forms of energy in Iowa for many years, largely due to the implementation of wind farms. Iowa meets many of the ideal criteria for determining where to place wind farms. The most important criteria are high wind speeds and low population density. These ensure that the turbines will have enough wind, while also being far away from most people. On this map, you can see the location of the largest wind farms, the areas with the highest average winds, and population density for each county in Iowa.
+    <p id="text"> Wind Energy has been one of the fastest growing forms of energy in Iowa for many years, largely due to the implementation of wind farms. Iowa meets many of the ideal criteria for determining where to place wind farms. The most important criteria are high wind speeds and low population density. These ensure that the turbines will have enough wind, while also being far away from most people. On this map, you can see the location of the largest wind farms, the areas with the highest average winds, and population density for each county in Iowa.
         <br><br>
         The "Popular Location" button will take you to where the majority of Iowa's major wind farms are located. The "Ideal Location" button will take you to where my analysis shows the best location for a new windfarm would be. </p>
     
